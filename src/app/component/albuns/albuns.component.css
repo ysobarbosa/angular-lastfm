@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 36px;
+    justify-content: center;
+    align-items: center
+}
+
+.card {
+width: 50%;
+background-color:rgba(13, 13, 13, 1.0);
+min-width: 150px;
+
+}
+
+.title {
+margin-right: 15px;
+margin-top: 22px;
+font-weight: 200;
+font-size: x-large;
+color: #D93B48;
+}
+
+.input {
+width: 92%;
+}
+
+.text {
+color: #F20505
+}
+
+.button {
+margin-left: 8px;
+background-color: #F20505
+}
+
+/* input color class */
+
+
+/* input color class */
+.mat-form-field-empty .mat-form-field-label {
+color: green !important;
+}
+/* Change label color on focused */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+color: #a60303 !important;
+}
+
+/* underline border color on focused */
+::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
+background-color: #a60303 !important;
+}
+
+/*
+
+
+
+/*
+margin-top: 300px;
+
+*/
