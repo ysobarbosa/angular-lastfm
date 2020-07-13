@@ -36,6 +36,7 @@ export interface Albuns {
       }
       playcount: string;
       url: string;
+      name: string;
     }
   }
 }

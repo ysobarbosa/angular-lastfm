@@ -7,10 +7,11 @@ import {Albuns, Artists} from 'src/app/model/albuns.model';
   templateUrl: './albuns.component.html',
   styleUrls: ['./albuns.component.css']
 })
+
 export class AlbunsComponent implements OnInit {
   alb: Albuns;
   artists: Artists;
-
+  albuns;
   constructor(private apisService: ApisService) {}
 
   ngOnInit(): void {
@@ -18,14 +19,22 @@ export class AlbunsComponent implements OnInit {
     this.getArtists();
   }
 
+  objetoLista = (objeto) => {
+    const lista = [];
+    const keys = Object.keys(objeto);
+    keys.forEach(element => {
+      const obj = {... objeto[element]};
+      lista.push(obj);
+    });
+    return lista;
+  }
+
   getAlbuns() {
     this.apisService.getAlbuns()
       .subscribe(
-        (alb: Albuns) => {
+        (alb: any) => {
           this.alb = alb;
-          console.log(this.alb.topalbums.album[2].artist.name);
-          console.log(this.alb.topalbums.album[2].image[2].text);
-          console.log(this.alb.topalbums.album[2].url);
+          this.albuns = this.objetoLista(this.alb.topalbums.album);
         });
   }
 
@@ -34,22 +43,8 @@ export class AlbunsComponent implements OnInit {
       .subscribe(
         (artists: Artists) => {
           this.artists = artists;
-          // console.log(this.artists);
-          // console.log(this.artists.artist.name);
-          // console.log(this.artists.artist.url);
-          // console.log(this.artists.artist.similar.artist[1].name);
         }
       )
   }
 
 }
-
-// (data: Albuns) => {
-//       this.albuns = data;
-//       console.log("a variavel dsd", this.albuns);
-//       console.log("a variavel", this.albuns.topalbuns.album);
-//       console.log("o data que recebemos: ", data);
-//     }, error => {
-//         this.erro = error;
-//         console.error("Erro")
-// ;    })
