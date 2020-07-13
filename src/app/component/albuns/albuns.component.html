@@ -1,39 +1,30 @@
-<p>albuns works!</p>
 <form class="container">
-    <mat-card class="card" mat-elevation-z8>
-      <!--<p class="text">-->
-        <!--Insira seu usuário e veja seus albuns mais ouvidos no last.fm-->
-      <!--</p>-->
-
-      <!--<div>-->
-        <!--<mat-form-field class="input">-->
-          <!--<mat-label>User</mat-label>-->
-          <!--<input matInput type="text">-->
-        <!--</mat-form-field>-->
-        <!--<button class="button" mat-mini-fab >-->
-          <!--<mat-icon>play_arrow</mat-icon>-->
-        <!--</button>-->
-      <!--</div>-->
-    <!--</mat-card>-->
-
-  <div >
-      <p>{{this.alb.topalbums.album[i].artist.name}}</p>
-  </div>
-    <mat-card>
-
-      <!--<p>{{a.topalbums.album[2].artist.name}}</p>-->
-      <!--<p>{{a.topalbums.album[2].image[2].size}}</p>-->
-      <!--<ul>-->
-        <!--<li >-->
-            <!--{{this.albuns.artist.name }}-->
-        <!--</li>-->
-        <!--<li>-->
-            <!--{{this.albuns.artist.image[0].size}}-->
-        <!--</li>-->
-      <!--</ul>-->
-      <!--<p>-->
-        <!--{{this.albuns.artist.bio.content}}-->
-      <!--</p>-->
-
+    <mat-card class="mat-elevation-z10 usercard">
+      <div>
+        <p class="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida ex ac est luctus, vel malesuada elit condimentum. Phasellus sem lorem, eleifend dapibus iaculis eu, faucibus fermentum ipsum. Mauris nec porta neque. In mattis sapien ac pulvinar tincidunt. Nulla facilisi. Duis blandit non justo id euismod.
+        </p>
+        <div>
+          <mat-form-field appearance="outline" class="input">
+            <mat-label>Insira seu usuário last.fm</mat-label>
+            <input matInput >
+          </mat-form-field>
+          <button class="button" mat-mini-fab >
+            <mat-icon>play_arrow</mat-icon>
+          </button>
+        </div>
+      </div>
     </mat-card>
   </form>
+
+<div class="cards">
+  <div *ngFor="let album of albuns" >
+    <div class="albuns" >
+      <div   >
+        <p>{{album.artist.name}}</p>
+        <img src="{{album.image[2]['#text']}}">
+        <p>{{album.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>

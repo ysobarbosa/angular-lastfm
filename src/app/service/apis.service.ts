@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from  '@angular/common/http';
+import { HttpClient } from  '@angular/common/http';
 import {Albuns, Artists} from '../model/albuns.model';
-import {Observable, throwError} from 'rxjs';
-import {retry, catchError} from "rxjs/operators";
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -14,7 +13,7 @@ url = 'http://ws.audioscrobbler.com/2.0/';
   constructor(private httpClient: HttpClient) { }
 
   getAlbuns(): Observable<Albuns> {
-    return this.httpClient.get<Albuns>(this.url + '?method=user.gettopalbums&user=yasminio&api_key=997d8d682dd5f5a5205b0f7e9aa9e75f&format=json')
+    return this.httpClient.get<Albuns>(this.url + '?method=user.gettopalbums&user=yasminio&limit=10&api_key=997d8d682dd5f5a5205b0f7e9aa9e75f&format=json')
   }
 
   getArtists(): Observable<Artists> {

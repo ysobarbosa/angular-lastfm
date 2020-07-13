@@ -6,11 +6,12 @@
     align-items: center
 }
 
-.card {
-width: 50%;
+.usercard {
+width: 70%;
 background-color:rgba(13, 13, 13, 1.0);
 min-width: 150px;
-
+  z-index: 10;
+  margin-bottom: 32px;
 }
 
 .title {
@@ -34,10 +35,27 @@ margin-left: 8px;
 background-color: #F20505
 }
 
-/* input color class */
+.cards {
+  margin-bottom: 0px;
+}
+
+.albuns {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  flex-direction: row;
+  display: grid;
+  margin-left: 32px;
 
 
-/* input color class */
+  /*background:black;*/
+  /*background:rgba(0,0,0,0.8);*/
+  /*filter:blur(4px);*/
+  /*-o-filter:blur(4px);*/
+  /*-ms-filter:blur(4px);*/
+  /*-moz-filter:blur(4px);*/
+  /*-webkit-filter:blur(4px);*/
+}
 .mat-form-field-empty .mat-form-field-label {
 color: green !important;
 }
