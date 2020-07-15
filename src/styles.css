@@ -1,7 +1,10 @@
 @import '../node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css';
 
 
-html, body {  }
+
+html, body {
+}
 body { font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #000000;
+
+  background: linear-gradient(180deg, rgb(31, 3, 3) 0%, rgba(13, 13, 13, 1.0) 100%);
 }

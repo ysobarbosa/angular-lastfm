@@ -1,4 +1,4 @@
-.container {
+.cont {
     display: flex;
     flex-direction: column;
     margin-top: 36px;
@@ -7,9 +7,9 @@
 }
 
 .usercard {
-width: 70%;
-background-color:rgba(13, 13, 13, 1.0);
-min-width: 150px;
+
+  background: linear-gradient(180deg, rgba(166, 3, 3, 0.3) 0%, rgba(13, 13, 13, 0) 100%);
+  min-width: 150px;
   z-index: 10;
   margin-bottom: 32px;
 }
@@ -17,9 +17,9 @@ min-width: 150px;
 .title {
 margin-right: 15px;
 margin-top: 22px;
-font-weight: 200;
-font-size: x-large;
-color: #D93B48;
+font-weight: 100;
+font-size: large;
+color: #bcbcbc;
 }
 
 .input {
@@ -27,7 +27,7 @@ width: 92%;
 }
 
 .text {
-color: #F20505
+color: #bcbcbc
 }
 
 .button {
@@ -36,16 +36,31 @@ background-color: #F20505
 }
 
 .cards {
-  margin-bottom: 0px;
+  margin-bottom: 8px;
+  max-width: 200px ;
+  z-index: 10;
+  /*background: linear-gradient(180deg, rgba(166, 3, 3, 0.1) 0%, rgba(13, 13, 13, 0) 50%);*/
+  -ms-filter:blur(4px);
+  background:rgba(0,0,0,0.5);
+  /* filter:blur(4px);
+   */
+}
+
+mat-card {
+  /*background:black;*/
+  /*background:rgba(0,0,0,0.8);*/
+  /*filter:blur(4px);*/
+  /*-o-filter:blur(4px);*/
+  /*-ms-filter:blur(4px);*/
+  /*-moz-filter:blur(4px);*/
+  /*-webkit-filter:blur(4px);*/
 }
 
 .albuns {
   width: 100%;
-  height: auto;
-  max-width: 200px;
+  max-width: 224px;
+
   flex-direction: row;
-  display: grid;
-  margin-left: 32px;
 
 
   /*background:black;*/
