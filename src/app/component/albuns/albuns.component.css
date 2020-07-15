@@ -1,17 +1,14 @@
 .cont {
-    display: flex;
-    flex-direction: column;
     margin-top: 36px;
     justify-content: center;
     align-items: center
 }
 
 .usercard {
-
   background: linear-gradient(180deg, rgba(166, 3, 3, 0.3) 0%, rgba(13, 13, 13, 0) 100%);
-  min-width: 150px;
   z-index: 10;
   margin-bottom: 32px;
+  margin-top: 16px;
 }
 
 .title {
@@ -37,13 +34,19 @@ background-color: #F20505
 
 .cards {
   margin-bottom: 8px;
-  max-width: 200px ;
+  margin-right: 10px;
   z-index: 10;
   /*background: linear-gradient(180deg, rgba(166, 3, 3, 0.1) 0%, rgba(13, 13, 13, 0) 50%);*/
   -ms-filter:blur(4px);
   background:rgba(0,0,0,0.5);
   /* filter:blur(4px);
    */
+}
+
+.artistName{
+  font-weight: 200;
+  font-size: medium;
+  color: #e0dbf4;
 }
 
 mat-card {
@@ -57,12 +60,6 @@ mat-card {
 }
 
 .albuns {
-  width: 100%;
-  max-width: 224px;
-
-  flex-direction: row;
-
-
   /*background:black;*/
   /*background:rgba(0,0,0,0.8);*/
   /*filter:blur(4px);*/

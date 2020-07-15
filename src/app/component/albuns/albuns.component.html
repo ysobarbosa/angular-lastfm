@@ -15,19 +15,23 @@
         </form>
       </div>
     </mat-card>
-  <mat-card class="cards mat-elevation-z10">
-  <div *ngFor="let album of albuns">
+    <div class="container">
       <div class="row">
+        <div *ngFor="let album of albuns">
+          <mat-card class="cards">
           <div class="col-md">
-            <p class="title">{{album.artist.name}}</p>
+            <p class="artistName">{{album.artist.name}}</p>
             <img src="{{album.image[2]['#text']}}" class="img-fluid">
             <p class="title">{{album.name}}</p>
           </div>
+          </mat-card>
+        </div>
       </div>
+    </div>
 
-  </div>
-  </mat-card>
+
 </div>
+
 
 
 

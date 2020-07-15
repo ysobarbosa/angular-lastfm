@@ -15,7 +15,7 @@ url = 'http://ws.audioscrobbler.com/2.0/';
   getAlbuns(): Observable<Albuns> {
     return this.httpClient.get<Albuns>(this.url + '?method=user.gettopalbums&user=' +
       'yasminio' +
-      '&limit=10&api_key=997d8d682dd5f5a5205b0f7e9aa9e75f&format=json')
+      '&limit=12&api_key=997d8d682dd5f5a5205b0f7e9aa9e75f&format=json')
   }
 
   getArtists(): Observable<Artists> {
