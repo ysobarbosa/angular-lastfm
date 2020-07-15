@@ -1,6 +1,8 @@
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import { Component, OnInit } from '@angular/core';
-import { ApisService } from 'src/app/service/apis.service';
-import {Albuns, Artists} from 'src/app/model/albuns.model';
+import { ApisService }       from 'src/app/service/apis.service';
+import { Albuns, Artists }   from 'src/app/model/albuns.model';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-albuns',
@@ -9,14 +11,18 @@ import {Albuns, Artists} from 'src/app/model/albuns.model';
 })
 
 export class AlbunsComponent implements OnInit {
+  albuns;
   alb: Albuns;
   artists: Artists;
-  albuns;
+  input = new FormGroup ({
+    user: new FormControl(''),
+  })
+;
+
   constructor(private apisService: ApisService) {}
 
   ngOnInit(): void {
     this.getAlbuns();
-    this.getArtists();
   }
 
   objetoLista = (objeto) => {
@@ -27,7 +33,7 @@ export class AlbunsComponent implements OnInit {
       lista.push(obj);
     });
     return lista;
-  }
+  };
 
   getAlbuns() {
     this.apisService.getAlbuns()
@@ -36,6 +42,11 @@ export class AlbunsComponent implements OnInit {
           this.alb = alb;
           this.albuns = this.objetoLista(this.alb.topalbums.album);
         });
+  };
+
+  getUser() {
+    const user = this.input.controls.user.value; // retorna o usuario
+    console.log(this.input.controls.user.value);
   }
 
   getArtists() {
@@ -45,6 +56,6 @@ export class AlbunsComponent implements OnInit {
           this.artists = artists;
         }
       )
-  }
+  };
 
 }
