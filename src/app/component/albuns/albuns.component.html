@@ -1,35 +1,51 @@
-<div  class="container">
-    <mat-card class="mat-elevation-z10 usercard">
-      <div>
-        <p class="title">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida ex ac est luctus, vel malesuada elit condimentum. Phasellus sem lorem,
-        </p>
-        <form [formGroup]="input">
-          <mat-form-field appearance="outline" class="input" >
-            <mat-label>Insira seu usuário last.fm</mat-label>
-            <input matInput type="text" formControlName="user">
-          </mat-form-field>
-          <button class="button" mat-mini-fab (click)="getUser()">
-            <mat-icon>play_arrow</mat-icon>
-          </button>
-        </form>
-      </div>
-    </mat-card>
-    <div class="container">
-      <div class="row">
-        <div *ngFor="let album of albuns">
-          <mat-card class="cards">
-          <div class="col-md">
-            <p class="artistName">{{album.artist.name}}</p>
-            <img src="{{album.image[2]['#text']}}" class="img-fluid">
-            <p class="title">{{album.name}}</p>
-          </div>
-          </mat-card>
+<div class="container">
+  <mat-card class="mat-elevation-z10 usercard">
+    <section>
+      <p class="title">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida ex ac est luctus, vel malesuada elit
+        condimentum. Phasellus sem lorem,
+      </p>
+      <form [formGroup]="input">
+        <mat-form-field appearance="outline" class="input">
+          <mat-label>Insira seu usuário last.fm</mat-label>
+          <input matInput type="text" formControlName="username">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-select  formControlName="period">
+            <mat-option  *ngFor="let periodo of periods" [value]="periodo.data">
+              {{periodo.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-icon-button aria-label="Ir" (click)="getAlbuns()" [value]="on">
+          <mat-icon>play_arrow</mat-icon>
+        </button>
+      </form>
+    </section>
+  </mat-card>
+
+  <section class="container">
+    <div class="row">
+      <div *ngFor="let album of albuns">
+        <div class="col-md-12 total">
+          <p class="albumName">{{album.name}}</p>
+          <p class="plays">{{album.playcount}} reproduções </p>
+          <mat-accordion class="align-content-around">
+            <mat-expansion-panel hideToggle (click)="getArtists(album.artist.name)">
+              <mat-expansion-panel-header class="artistName">
+                <mat-panel-title>
+                  <span >{{album.artist.name}}</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="artistBio">{{this.artistBio}} </p>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <img src="{{album.image[3]['#text']}}" class="img-fluid" style="align-content: center">
+          <mat-divider class="divider"></mat-divider>
         </div>
       </div>
     </div>
-
-
+  </section>
 </div>
 
 
