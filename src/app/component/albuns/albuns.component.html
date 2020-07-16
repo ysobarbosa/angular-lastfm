@@ -2,22 +2,21 @@
   <mat-card class="mat-elevation-z10 usercard">
     <section>
       <p class="title">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida ex ac est luctus, vel malesuada elit
-        condimentum. Phasellus sem lorem,
+        Informe seu usuário* Last.fm e um período para gerar seus 12 albuns mais ouvidos!
       </p>
+      <p class="small-text">*Caso não possua um usuário, utilize o default </p>
       <form [formGroup]="input">
         <mat-form-field appearance="outline" class="input">
           <mat-label>Insira seu usuário last.fm</mat-label>
           <input matInput type="text" formControlName="username">
         </mat-form-field>
         <mat-form-field appearance="outline">
+          <mat-label>Período</mat-label>
           <mat-select  formControlName="period">
-            <mat-option  *ngFor="let periodo of periods" [value]="periodo.data">
-              {{periodo.name}}
-            </mat-option>
+            <mat-option  *ngFor="let periodo of periods" [value]="periodo.data">{{periodo.name}}</mat-option>
           </mat-select>
         </mat-form-field>
-        <button mat-icon-button aria-label="Ir" (click)="getAlbuns()" [value]="on">
+        <button mat-icon-button aria-label="Ir" (click)="getAlbuns()">
           <mat-icon>play_arrow</mat-icon>
         </button>
       </form>
