@@ -27,7 +27,7 @@ export class AlbunsComponent implements OnInit {
   alb: Albuns;
   artists: any;
   input = new FormGroup({
-    username: new FormControl(''),
+    username: new FormControl('Yasminio'),
     period: new FormControl('')
   });
 

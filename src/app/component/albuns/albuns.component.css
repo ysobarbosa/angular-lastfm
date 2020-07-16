@@ -11,15 +11,21 @@
 }
 
 .title {
-margin-right: 15px;
-margin-top: 22px;
-font-weight: 100;
-font-size: large;
-color: #bcbcbc;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  font-weight: 100;
+  font-size: large;
+  color: #bcbcbc;
+}
+
+.small-text {
+  font-size: 11px;
+  font-weight: 100;
+  color: #bcbcbc;
 }
 
 .input {
-width: 70%;
+  width: 70%;
   margin-right: 16px;
 }
 
@@ -28,15 +34,15 @@ width: 70%;
 }
 
 /deep/ .mat-form-field-type-mat-select .mat-form-field-label, .mat-select-value {
-  color: red;
-}
-
-:host /deep/ .mat-select-value-text {
   color: #bcbcbc !important;
 }
 
+:host /deep/ .mat-select-value-text {
+  color: #ebe6ff !important;
+}
+
 .text {
-color: #bcbcbc
+  color: #bcbcbc
 }
 
 button {
@@ -81,9 +87,9 @@ mat-expansion-panel {
 }
 
 img {
-border-radius: 50%;
-margin: 0px 16px 16px 16px;
-box-shadow: 2px 2px 4px #414141;
+  border-radius: 50%;
+  margin: 0px 16px 16px 16px;
+  box-shadow: 2px 2px 4px #414141;
   max-width: 250px;
 }
 
