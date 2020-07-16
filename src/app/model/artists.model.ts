@@ -15,6 +15,7 @@ export interface Artists {
     }
 
     bio: {
+      summary: string
       content: string
     }
   }

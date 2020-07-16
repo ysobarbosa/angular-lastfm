@@ -1,19 +1,23 @@
-import { NgModule }         from '@angular/core';
-import { HttpClientModule } from '@angular/common/http'
-import { BrowserModule }    from '@angular/platform-browser';
+import { NgModule }                         from '@angular/core';
+import { HttpClientModule }                 from '@angular/common/http'
+import { BrowserModule }                    from '@angular/platform-browser';
 
-import { AppComponent }            from './app.component';
-import { ApisService }             from './service/apis.service';
-import { MatCardModule }           from '@angular/material/card';
-import { MatIconModule }           from '@angular/material/icon';
-import { AppRoutingModule }        from './app-routing.module';
-import { MatInputModule }          from '@angular/material/input';
-import { MatButtonModule }         from  '@angular/material/button';
-import { MatGridListModule }       from "@angular/material/grid-list";
-import { MatFormFieldModule }      from "@angular/material/form-field";
-import { AlbunsComponent }         from './component/albuns/albuns.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ApisService }                      from './service/apis.service';
+import { AppComponent }                     from './app.component';
+import { MatIconModule }                    from '@angular/material/icon';
+import { MatCardModule }                    from '@angular/material/card';
+import { MatInputModule }                   from '@angular/material/input';
+import { MatSelectModule }                  from "@angular/material/select";
+import { MatButtonModule }                  from  '@angular/material/button';
+import { AlbunsComponent }                  from './component/albuns/albuns.component';
+import { MatDividerModule }                 from '@angular/material/divider';
+import { AppRoutingModule }                 from './app-routing.module';
+import { MatGridListModule }                from '@angular/material/grid-list';
+import { MatExpansionModule }               from "@angular/material/expansion";
+import { MatFormFieldModule }               from '@angular/material/form-field';
+import { MatSlideToggleModule }             from "@angular/material/slide-toggle";
+import { BrowserAnimationsModule }          from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +30,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FormsModule,
     MatIconModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
     HttpClientModule,
+    MatDividerModule,
     AppRoutingModule,
     MatGridListModule,
     MatFormFieldModule,
+    MatExpansionModule,
     ReactiveFormsModule,
+    MatSlideToggleModule,
     BrowserAnimationsModule
   ],
   providers: [ApisService],

@@ -1,8 +1,9 @@
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import { Component, OnInit } from '@angular/core';
-import { ApisService }       from 'src/app/service/apis.service';
-import { Albuns, Artists }   from 'src/app/model/albuns.model';
-import {HttpClient} from "@angular/common/http";
+import {Component, OnInit} from '@angular/core';
+import {Artists} from "../../model/artists.model";
+import {Albuns} from 'src/app/model/albuns.model';
+import {FormControl, FormGroup} from "@angular/forms";
+import {ApisService} from 'src/app/service/apis.service';
+
 
 @Component({
   selector: 'app-albuns',
@@ -11,18 +12,31 @@ import {HttpClient} from "@angular/common/http";
 })
 
 export class AlbunsComponent implements OnInit {
-  albuns;
-  alb: Albuns;
-  artists: Artists;
-  input = new FormGroup ({
-    user: new FormControl(''),
-  })
-;
 
-  constructor(private apisService: ApisService) {}
+  periods: any[] = [
+    {name: '7 dias', data: '7day'},
+    {name: '1 mês', data: '1month'},
+    {name: '3 meses', data: '3month'},
+    {name: '6 meses', data: '6month'},
+    {name: '12 meses', data: '12month'},
+    {name: 'Geral', data: 'overall'}
+  ];
+
+  albuns;
+  artistBio;
+  alb: Albuns;
+  artists: any;
+  input = new FormGroup({
+    username: new FormControl(''),
+    period: new FormControl('')
+  });
+
+  constructor(private apisService: ApisService) {
+
+  }
 
   ngOnInit(): void {
-    this.getAlbuns();
+
   }
 
   objetoLista = (objeto) => {
@@ -36,7 +50,9 @@ export class AlbunsComponent implements OnInit {
   };
 
   getAlbuns() {
-    this.apisService.getAlbuns()
+    const period = this.input.controls.period.value;
+    const username = this.input.controls.username.value;
+    this.apisService.getAlbuns(username, period)
       .subscribe(
         (alb: any) => {
           this.alb = alb;
@@ -44,18 +60,13 @@ export class AlbunsComponent implements OnInit {
         });
   };
 
-  getUser() {
-    const user = this.input.controls.user.value; // retorna o usuario
-    console.log(this.input.controls.user.value);
-  }
-
-  getArtists() {
-    this.apisService.getArtists()
+  getArtists(artistName: string) {
+    this.apisService.getArtists(artistName)
       .subscribe(
         (artists: Artists) => {
-          this.artists = artists;
+          this.artists = this.objetoLista(artists);
+          this.artistBio = this.artists[0].bio.summary;
         }
-      )
+      );
   };
-
 }
