@@ -11,7 +11,7 @@ import {Artists} from "../model/artists.model";
 export class ApisService {
 
 url = 'http://ws.audioscrobbler.com/2.0/';
-apiKey = '997d8d682dd5f5a5205b0f7e9aa9e75f';
+apiKey = '';
 
 
 constructor(private httpClient: HttpClient) { }
